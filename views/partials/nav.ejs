@@ -4,6 +4,9 @@
 </head>
 <body>
   <nav>
+    <a href="/albums/new"
+    <%- title === 'Add Album' ? 'class="active"' : '' %>
+		>ADD ALBUM</a>
     <% if (user) { %>
       <a href="/auth/logout">
         <button type="submit">Logout</button>

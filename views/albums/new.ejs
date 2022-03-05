@@ -1,7 +1,8 @@
-<%- include('./partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/style.css" />
-<%- include('./partials/nav') %>
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="../stylesheets/style.css"/>
+<%- include('../partials/nav') %>
 
+<main>
 <h1> <%= title %> </h1>
   <form action="/albums" method="POST">
     <label>Title:
@@ -18,6 +19,7 @@
     </label><br>
     <button type="submit">Add It!</button>
   </form>
+</main>
 
 
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>
