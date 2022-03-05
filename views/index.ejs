@@ -2,6 +2,7 @@
 <%- include('./partials/nav') %>
 
 <main>
+  <a href="/albums/new">Add Album!</a>
   <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
