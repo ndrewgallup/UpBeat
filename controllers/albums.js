@@ -48,10 +48,25 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Album.findById(req.params.id)
+  .then(album => {
+    res.render('albums/edit', {
+      album,
+      title: "Edit Details"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/albums')
+  })
+}
+
 
 export {
   newAlbum as new,
   create,
   index,
   show,
+  edit,
 }

@@ -1,0 +1,50 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit Your Album</h1>
+  <form action="/albums/<%= album._id %>?_method=PUT" method="POST">
+    <label>
+      Title: 
+      <input 
+        type="text"
+        name="title" 
+        value="<%= album.title %>" 
+        autocomplete="off"
+      >
+    </label><br>
+    <label>
+      Artist:
+      <input 
+        type="text" 
+        name="artist" 
+				value="<%= album.artist %>" 
+        autocomplete="off"
+      >
+    </label><br>
+    <label>
+      Release Year:
+      <input 
+        type="text" 
+        name="releaseYear" 
+				value="<%= album.releaseYear %>" 
+        autocomplete="off"
+      >
+    </label><br>
+    <label>
+      Record Label:
+      <input 
+        type="text" 
+        name="recordLabel" 
+				value="<%= album.recordLabel %>" 
+        autocomplete="off"
+      >
+    </label><br>
+    <button type="submit">Update Album</button>
+  </form>
+</section>
+
+
+
+
+<%- include('../partials/footer') %>
