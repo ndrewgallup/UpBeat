@@ -13,6 +13,9 @@ router.get('/:id/edit', isLoggedIn, albumsCtrl.edit)
 //POST- /albums
 router.post('/', isLoggedIn, albumsCtrl.create)
 
+// PUT - /albums/:id
+router.put('/:id', isLoggedIn, albumsCtrl.update)
+
 export {
   router 
 }
