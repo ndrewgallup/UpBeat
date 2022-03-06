@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/style.css" />
+<%- include('../partials/nav') %>
+
+
+<main>
+  <h1>All Albums</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>TITLE</th>
+        <th>ARTIST</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% albums.forEach(album => { %> 
+        <tr>
+          <td><%= album.title %></td>
+          <td><%= album.artist %></td>
+          <td><a href="/albums/<%= album._id %>" id="details">ALBUM DETAILS</a></td>
+        </tr>
+      <% }) %>
+    </tbody> 
+  </table>
+</main>
+
+<%- include('../partials/footer') %>

@@ -7,6 +7,7 @@ const albumSchema = new Schema({
   artist: String,
   year: String,
   recordLabel: String,
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 })
 
 const Album = mongoose.model('Album', albumSchema)

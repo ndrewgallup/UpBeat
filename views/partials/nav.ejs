@@ -7,6 +7,9 @@
     <a href="/albums/new"
     <%- title === 'Add Album' ? 'class="active"' : '' %>
 		>ADD ALBUM</a>
+    <a href="/albums"
+    <%- title === 'All Albums' ? 'class="active"' : '' %>
+		>ALL ALBUMS</a>
     <% if (user) { %>
       <a href="/auth/logout">
         <button type="submit">Logout</button>

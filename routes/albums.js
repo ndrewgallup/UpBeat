@@ -4,11 +4,12 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-//GET - /albums/new
-router.get('/new', albumsCtrl.new)
+//GET - /albums
+router.get('/', albumsCtrl.index)
+router.get('/new', isLoggedIn, albumsCtrl.new)
 
 //POST- /albums
-router.post('/', isLoggedIn, albums.Ctrl.create)
+router.post('/', isLoggedIn, albumsCtrl.create)
 
 export {
   router 
