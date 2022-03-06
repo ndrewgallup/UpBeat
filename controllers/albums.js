@@ -6,6 +6,19 @@ function newAlbum(req, res) {
   })
 }
 
+function create(req, res) {
+  Album.create(req.body)
+  .then(album => {
+    res.redirect('/albums')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/albums")
+  })
+}
+
+
 export {
   newAlbum as new,
+  create,
 }
