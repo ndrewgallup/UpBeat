@@ -19,21 +19,32 @@ function create(req, res) {
 }
 
 function index(req, res) {
-  Album.find({}, function(error, albums){
+  Album.find({})
+  .then(albums => {
     res.render('albums/index', {
       albums,
-      error,
       title: 'All Albums',
     })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/albums')
   })
 }
 
 function show(req, res) {
-  Album.findById(req.params.id, function (err, album) {
+  Album.findById(req.params.id) 
+  .populate('owner')
+  .then(album => {
+    console.log(album)
     res.render('albums/show', {
       title: 'Album Details',
       album,
     })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/albums')
   })
 }
 
