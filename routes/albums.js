@@ -7,6 +7,7 @@ const router = Router()
 //GET - /albums
 router.get('/', albumsCtrl.index)
 router.get('/new', isLoggedIn, albumsCtrl.new)
+router.get('/:id', isLoggedIn, albumsCtrl.show)
 
 //POST- /albums
 router.post('/', isLoggedIn, albumsCtrl.create)

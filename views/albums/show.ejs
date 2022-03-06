@@ -1,0 +1,21 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/movies/show.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <div>Title: </div>
+    <div><%= album.title %></div>
+    <div>Artist: </div>
+    <div><%= album.artist %></div>
+    <div>Release Year: </div>
+    <div><%= album.year %></div>
+    <div>Record Label: </div>
+    <div><%= album.recordLabel %></div>
+  </section>
+</main>
+
+
+
+<%- include('../partials/footer') %>

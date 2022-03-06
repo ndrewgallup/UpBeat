@@ -4,10 +4,12 @@ const Schema = mongoose.Schema
 
 const albumSchema = new Schema({
   title: String,
-  artist: String,
-  year: String,
+  artist: String, 
+  year: Number, 
   recordLabel: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}
+}, {
+  timestamps: true
 })
 
 const Album = mongoose.model('Album', albumSchema)

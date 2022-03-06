@@ -28,9 +28,19 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  Album.findById(req.params.id, function (err, album) {
+    res.render('albums/show', {
+      title: 'Album Details',
+      album,
+    })
+  })
+}
+
 
 export {
   newAlbum as new,
   create,
   index,
+  show,
 }
