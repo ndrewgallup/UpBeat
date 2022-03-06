@@ -7,16 +7,16 @@ function newAlbum(req, res) {
 }
 
 function create(req, res) {
-  for(let key in req.body) {
-    if(req.body[key] === '') delete req.body[key]
-  }
-  const album = new Album(req.body)
-  album.save(function(error){
-    if (error) 
-    return res.render('albums/new')
+  Album.create(req.body)
+  .then(album => {
     res.redirect('/albums')
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/albums")
+  })
 }
+
 
 function index(req, res) {
   Album.find({})

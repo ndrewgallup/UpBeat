@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const albumSchema = new Schema({
   title: String,
   artist: String, 
-  year: Number, 
+  year: String, 
   recordLabel: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
