@@ -40,7 +40,10 @@
         autocomplete="off"
       >
     </label><br>
-    <button type="submit">Update Album</button>
+    <button class="update-btn" type="submit">Update Album</button>
+    <form action="/albums/<%= album._id %>?_method=DELETE" method="POST">
+      <button class="delete-btn" type="submit">Delete This Album</button>
+    </form>
   </form>
 </section>
 
