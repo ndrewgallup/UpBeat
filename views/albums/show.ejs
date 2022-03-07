@@ -2,16 +2,18 @@
 <link rel="stylesheet" href="../stylesheets/movies/show.css" />
 <%- include('../partials/nav') %>
 
-<section>
-  
-  <h1>"<%= album.title %>"</h1>
+
+<h1>"<%= album.title %>"</h1>
+<section id="album-details">
     <div>Artist: </div>
     <div><%= album.artist %></div>
     <div>Release Year: </div>
     <div><%= album.year %></div>
     <div>Record Label: </div>
     <div><%= album.recordLabel %></div>
+</section>
 
+<section id="user-options">
     <% if (album.owner.equals(user?.profile._id)) { %>
     <form action="/albums/<%= album._id %>/edit" method="GET">
       <button class="btn" type="submit">Edit Album</button>
@@ -20,15 +22,39 @@
       <button class="btn" type="submit">Delete Album</button>
     </form>
   <% } %>
+</section>
 
-
+<section id="review-option">
     <button>
       <a href="/albums<%= album._id %>/reviews">
         Add Review
       </a>
     </button>
+</section>
 
-  
+<section id="reviews">
+  <% if (album.reviews.length) { %>
+    <% let total = 0 %> 
+    <% album.reviews.forEach(review => { %>
+      <% total += review.rating %> 
+      <div><%= review.content %></div>
+      <div><%= review.owner.name %> - <%= review.rating %>/10
+        <br>
+        <%= review.createdAt.toLocaleDateString() %></div>
+        <br>
+        <% if (review.owner.equals(user?.profile._id)) { %>
+          <form action="/albums/<%= album._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete Review</button>
+          </form>
+        <% } %>
+        
+    <% }) %>
+        <strong><%= (total / album.reviews.length).toFixed(1) %></strong>
+<% } else { %>
+<h3>No Reviews Yet</h3>
+<% } %> 
+
+
 </section>
 
 
