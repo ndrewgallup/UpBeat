@@ -16,6 +16,9 @@ router.post('/', isLoggedIn, albumsCtrl.create)
 // PUT - /albums/:id
 router.put('/:id', isLoggedIn, albumsCtrl.update)
 
+//DELETE
+router.delete('/:id', isLoggedIn, albumsCtrl.delete)
+
 export {
   router 
 }

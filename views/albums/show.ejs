@@ -17,7 +17,10 @@
     <div>Record Label: </div>
     <div><%= album.recordLabel %></div>
     
-    
+    <form action="/albums/<%= album._id %>?_method=DELETE" method="POST">
+      <button class="delete-btn">Delete This Album</button>
+    </form>
+  </form>
   
 </section>
 
