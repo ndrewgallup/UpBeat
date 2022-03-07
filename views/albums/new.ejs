@@ -4,6 +4,7 @@
 
 <main>
 <h1> <%= title %> </h1>
+<% if (user) { %>
   <form action="/albums" method="POST">
     <label>Title:
       <input type="text" name="title">
@@ -19,6 +20,7 @@
     </label><br>
     <button type="submit">Add It!</button>
   </form>
+  <% } %>
 </main>
 
 
