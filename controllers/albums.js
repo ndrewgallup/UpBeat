@@ -104,7 +104,7 @@ function deleteAlbum(req, res) {
 function newReview(req, res){
   Album.findById(req.params.id)
   .then(album => {
-    res.render(`albums/reviews`, {
+    res.render('albums/reviews', {
       title: "Add Review",
       album
     })
