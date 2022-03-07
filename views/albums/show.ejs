@@ -5,22 +5,29 @@
 <section>
   
   <h1>"<%= album.title %>"</h1>
-  <div>
-    <a href="/albums/<%= album._id %>/edit">
-      <button id="edit">Edit Details</button>
-    </a>
-  </div>
     <div>Artist: </div>
     <div><%= album.artist %></div>
     <div>Release Year: </div>
     <div><%= album.year %></div>
     <div>Record Label: </div>
     <div><%= album.recordLabel %></div>
-    
-    <form action="/albums/<%= album._id %>?_method=DELETE" method="POST">
-      <button class="delete-btn">Delete This Album</button>
+
+    <% if (album.owner.equals(user?.profile._id)) { %>
+    <form action="/albums/<%= album._id %>/edit" method="GET">
+      <button class="btn" type="submit">Edit Album</button>
     </form>
-  </form>
+    <form action="/albums/<%= album._id %>?_method=DELETE" method="POST">
+      <button class="btn" type="submit">Delete Album</button>
+    </form>
+  <% } %>
+
+
+    <button>
+      <a href="/albums<%= album._id %>/reviews">
+        Add Review
+      </a>
+    </button>
+
   
 </section>
 
