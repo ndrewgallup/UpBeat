@@ -10,7 +10,7 @@ const reviewSchema = new Schema ({
     max: 10, 
     required: true
   },
-  favTrack: String,
+  favTrack: {type: String, required: true},
   content: {type: String, required: true},
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
 }, {

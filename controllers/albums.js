@@ -109,6 +109,23 @@ function newReview(req, res){
       album
     })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/albums')
+  })
+}
+
+function createReview(req, res){
+  console.log('Create Review:', req.body)
+  req.body.owner = req.user.profile._id
+  Album.findById(req.params.id) 
+  .then(album => {
+    album.reviews.push(req.body)
+    album.save()
+  .then(album => { 
+      res.redirect(`/albums/${album._id}`)
+    })
+  })
 }
 
 export {
@@ -120,4 +137,5 @@ export {
   update,
   deleteAlbum as delete,
   newReview,
+  createReview,
 }

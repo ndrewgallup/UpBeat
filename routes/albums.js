@@ -13,6 +13,7 @@ router.get('/:id/reviews', isLoggedIn, albumsCtrl.newReview)
 
 //POST- /albums
 router.post('/', isLoggedIn, albumsCtrl.create)
+router.post('/:id', isLoggedIn, albumsCtrl.createReview)
 
 // PUT - /albums/:id
 router.put('/:id', isLoggedIn, albumsCtrl.update)
