@@ -46,7 +46,14 @@
             <td><%= review.rating %></td>
             <td><%= review.favTrack %></td>
             <td><%= review.content %></td>
+            <td><form action="/albums/<#%= album._id %>/reviews/<#%= review._id %>/edit" method="GET">
+              <button type="submit">Edit</button>
+            </form></td>
+            <td><form action="/albums/<%= album._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form></td>
           </tr>
+          
         <% }) %>
       </tbody>
     </table>
