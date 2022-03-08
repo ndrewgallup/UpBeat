@@ -128,6 +128,16 @@ function createReview(req, res){
   })
 }
 
+function deleteReview(req, res) {
+  Album.findById(req.params.id, (error, album) => {
+    album.reviews.id(req.params.rid).remove()
+    album.save(err => {
+      res.redirect(`/albums/${req.params.id}`)
+    })
+  })
+}
+
+
 export {
   newAlbum as new,
   create,
@@ -138,4 +148,5 @@ export {
   deleteAlbum as delete,
   newReview,
   createReview,
+  deleteReview, 
 }

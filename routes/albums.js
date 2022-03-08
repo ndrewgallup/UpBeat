@@ -20,6 +20,8 @@ router.put('/:id', isLoggedIn, albumsCtrl.update)
 
 //DELETE
 router.delete('/:id', isLoggedIn, albumsCtrl.delete)
+// DELETE - localhost:3000/games/:id/reviews/:rid
+router.delete('/:id/reviews/:rid', isLoggedIn, albumsCtrl.deleteReview)
 
 export {
   router 
