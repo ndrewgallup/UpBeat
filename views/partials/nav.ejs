@@ -4,23 +4,27 @@
   <link rel="stylesheet" href="/stylesheets/nav.css">
 </head>
 <body>
-  <nav>
-    <a href="/profiles">WHO'S LISTENING?</a>
-    <a href="/albums/new"
-    <%- title === 'Add Album' ? 'class="active"' : '' %>
-		>ADD ALBUM</a>
-    <a href="/albums"
-    <%- title === 'All Albums' ? 'class="active"' : '' %>
-		>ALL ALBUMS</a>
-    <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
-    <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
-      </a>
-    <% } %>
+  <nav class="navbar">
+    <img class="logo" src="https://i.imgur.com/Fkly7j0.png" alt="logo">
+    
+    
+    <div class="nav-links">
+      <a href="/profiles">WHO'S LISTENING?</a>
+      <a href="/albums/new">ADD ALBUM</a>
+      <a href="/albums">ALL ALBUMS</a>
+        <% if (user) { %>
+          <a href="/auth/logout">
+            Logout
+          </a>
+        <% } else { %>
+          <a href="/auth/google" class="siwg-link">
+            <button type="submit" class="siwg">
+              <img id="siwg-image" alt="Sign in with Google" />
+            </button>
+          </a>
+        <% } %>
+    </div>
   </nav>
+  
+  
+
