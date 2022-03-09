@@ -3,14 +3,12 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const reviewSchema = new Schema ({
-  rTitle: {type: String, required: true},
   rating: {
     type: Number, 
     min: 1, 
     max: 10, 
     required: true
   },
-  favTrack: {type: String, required: true},
   content: {type: String, required: true},
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
 }, {
@@ -24,8 +22,9 @@ const albumSchema = new Schema({
   artist: String, 
   year: String, 
   recordLabel: String,
+  favTrack: {type: String, required: true},
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   reviews: [reviewSchema],
-  owner: {type: Schema.Types.ObjectId, ref: "Profile"}
   
 }, {
   timestamps: true

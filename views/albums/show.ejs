@@ -12,15 +12,14 @@
     <div><%= album.year %></div>
     <div>Record Label: </div>
     <div><%= album.recordLabel %></div>
+    <div>Favorite Song </div>
+    <div><%= album.favTrack %></div>
 </section>
 
 <section id="user-options">
     <% if (album.owner.equals(user?.profile._id)) { %>
     <form action="/albums/<%= album._id %>/edit" method="GET">
       <button class="btn" type="submit">Edit Album</button>
-    </form>
-    <form action="/albums/<%= album._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">Delete Album</button>
     </form>
   <% } %>
 </section>
@@ -32,9 +31,7 @@
         <tr>
           <th>Author</th>
           <th>Date</th>
-          <th>Title</th>
           <th>Rating</th>
-          <th>Favorite Track</th>
           <th>Review</th>
         </tr>
       </thead>
@@ -43,12 +40,10 @@
           <tr>
             <td><%= review.owner.name %></td>
             <td><%= review.createdAt.toLocaleDateString() %></td>
-            <td><%= review.rTitle %></td>
             <td><%= review.rating %></td>
-            <td><%= review.favTrack %></td>
             <td><%= review.content %></td>
             <% if (review.owner.equals(user?.profile._id)) { %>
-            <td><form action="/albums/<%= album._id %>/reviews/<%= review._id %>/edit" method="GET">
+            <td><form action="/albums/<%= album._id %>/reviews/<%= review._id %>" method="GET">
               <button class="btn" type="submit">Edit</button>
             </form></td>
             <td><form action="/albums/<%= album._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
@@ -64,11 +59,11 @@
   <% } %>
 
   <section id="review-option">
-    <button>
-      <a href="/albums/<%= album._id %>/reviews">
-        Add Review
-      </a>
+    <form action="/albums/<%= album._id %>/reviews" method="GET">
+    <button class="add-review-btn" type="submit">
+      Add Review
     </button>
+    </form>
 </section>
 
 

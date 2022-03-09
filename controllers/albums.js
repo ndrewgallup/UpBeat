@@ -82,27 +82,9 @@ function update(req, res) {
   })
 }
 
-function deleteAlbum(req, res) {
-  console.log(req.params.id)
-  Album.findById(req.params.id)
-  .then(album => {
-    if (album.owner.equals(req.user.profile._id)) {
-      album.delete()
-      .then(() => {
-        res.redirect('/albums')
-      })
-    } else {
-      throw new Error ('🚫 Not authorized 🚫')
-    }
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/albums')
-  })
-}
-
 function newReview(req, res){
   Album.findById(req.params.id)
+  .populate('owner')
   .then(album => {
     res.render('albums/reviews', {
       title: "Add Review",
@@ -137,21 +119,24 @@ function deleteReview(req, res) {
   })
 }
 
-// function editReview(req, res) {
-//   Album.findById(req.params.id, (error, album) => {
-//     album.reviews.id(req.params.rid, (error, review) => {
-//       console.log(req.params.rid)
-//       res.render('reviews/edit'), {
-//         album,
-//         review,
-//         title: "Edit Review"
-//       }
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//   })
-// }
+function editReview(req, res) {
+  Album.findById(req.params.id, (error, album) => {
+    album.reviews.id(req.params._id).find()
+    .then(album => {
+      res.render('albums/editReview', {
+        album,
+        review,
+        title: "Edit Review"
+      })
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/albums')
+  })
+}
+
+
 
 
 
@@ -162,9 +147,8 @@ export {
   show,
   edit,
   update,
-  deleteAlbum as delete,
   newReview,
   createReview,
-  deleteReview, 
-  //editReview,
+  deleteReview,
+  editReview,
 }

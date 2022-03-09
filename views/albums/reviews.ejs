@@ -11,7 +11,6 @@
       action="/albums/<%= album._id %>" 
       method="POST"
     >
-    <label>Title: <input type="text" name="rTitle"></label>
     <label for="rating-select">Rating:</label>
     <select name="rating" id="rating-select">
       <option value="1">1</option>
@@ -25,7 +24,6 @@
       <option value="9">9</option>
       <option value="10" selected>10</option>
     </select>
-    <label>Favorite Track: <input type="text" name="favTrack"></label>
     <label for="content-textarea">Review:</label>
     <textarea name="content" id="content-textarea"></textarea>
       <button type="submit">UpBeat</button>

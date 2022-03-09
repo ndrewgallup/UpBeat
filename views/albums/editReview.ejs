@@ -7,9 +7,9 @@
 	<h1>Edit Review</h1>
   <h2><%= album.title %> </h2>
   
-  <% if (user) { %>
+
     <form 
-      id="add-review-form" 
+      id="edit-review-form" 
       action="/albums/<%= album._id %>?_method=PUT" method="POST">
     <label>Title: <input type="text" name="rTitle" value="<%= review.rTitle %>"></label>
     <label for="rating-select">Rating:</label>
@@ -30,7 +30,7 @@
     <textarea name="content" id="content-textarea" value="<%= review.content %>"></textarea>
       <button type="submit">UpBeat</button>
     </form>
-  <% } %>
+  
 
   
 <%- include('../partials/footer') %>
