@@ -10,6 +10,7 @@ router.get('/new', isLoggedIn, albumsCtrl.new)
 router.get('/:id', isLoggedIn, albumsCtrl.show)
 router.get('/:id/edit', isLoggedIn, albumsCtrl.edit)
 router.get('/:id/reviews', isLoggedIn, albumsCtrl.newReview)
+// router.get('/:id/reviews/:rid/edit', isLoggedIn, albumsCtrl.editReview)
 
 //POST- /albums
 router.post('/', isLoggedIn, albumsCtrl.create)

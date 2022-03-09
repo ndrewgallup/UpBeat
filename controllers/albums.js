@@ -137,6 +137,23 @@ function deleteReview(req, res) {
   })
 }
 
+// function editReview(req, res) {
+//   Album.findById(req.params.id, (error, album) => {
+//     album.reviews.id(req.params.rid, (error, review) => {
+//       console.log(req.params.rid)
+//       res.render('reviews/edit'), {
+//         album,
+//         review,
+//         title: "Edit Review"
+//       }
+//     })
+//   })
+//   .catch(err => {
+//     console.log(err)
+//   })
+// }
+
+
 
 export {
   newAlbum as new,
@@ -149,4 +166,5 @@ export {
   newReview,
   createReview,
   deleteReview, 
+  //editReview,
 }

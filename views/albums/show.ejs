@@ -46,14 +46,15 @@
             <td><%= review.rating %></td>
             <td><%= review.favTrack %></td>
             <td><%= review.content %></td>
-            <td><form action="/albums/<#%= album._id %>/reviews/<#%= review._id %>/edit" method="GET">
-              <button type="submit">Edit</button>
+            <% if (review.owner.equals(user?.profile._id)) { %>
+            <td><form action="/albums/<%= album._id %>/reviews/<%= review._id %>/edit" method="GET">
+              <button class="btn" type="submit">Edit</button>
             </form></td>
             <td><form action="/albums/<%= album._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button type="submit">X</button>
+              <button class="delete-review-btn" type="sumbit">X</button>
             </form></td>
           </tr>
-          
+          <% } %>
         <% }) %>
       </tbody>
     </table>
