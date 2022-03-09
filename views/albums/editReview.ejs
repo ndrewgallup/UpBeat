@@ -5,13 +5,13 @@
 
 <main>
 	<h1>Edit Review</h1>
-  <h2><%= album.title %> </h2>
+  <h2>"<%= album.title %>" </h2>
   
 
     <form 
       id="edit-review-form" 
-      action="/albums/<%= album._id %>?_method=PUT" method="POST">
-    <label>Title: <input type="text" name="rTitle" value="<%= review.rTitle %>"></label>
+      action="/albums/<%= album._id %>/reviews/<%= review._id %>?_method=PUT" method="POST">
+    
     <label for="rating-select">Rating:</label>
     <select name="rating" id="rating-select">
       <option value="1">1</option>
@@ -25,10 +25,10 @@
       <option value="9">9</option>
       <option value="10" selected>10</option>
     </select>
-    <label>Favorite Track: <input type="text" name="favTrack" value="<%= review.favTrack %>"></label>
+    
     <label for="content-textarea">Review:</label>
-    <textarea name="content" id="content-textarea" value="<%= review.content %>"></textarea>
-      <button type="submit">UpBeat</button>
+    <textarea name="content" id="content-textarea"></textarea><br><br>
+      <button class='update-btn' type="submit">UpBeat</button>
     </form>
   
 

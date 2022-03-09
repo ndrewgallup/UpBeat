@@ -36,6 +36,7 @@ function index(req, res) {
 function show(req, res) {
   Album.findById(req.params.id) 
   .populate('owner')
+  .populate({path: 'reviews', populate: {path:'owner'}})
   .then(album => {
     console.log(album)
     res.render('albums/show', {
@@ -121,20 +122,34 @@ function deleteReview(req, res) {
 
 function editReview(req, res) {
   Album.findById(req.params.id, (error, album) => {
-    album.reviews.id(req.params._id).find()
-    .then(album => {
+    
+    const review = album.reviews.filter(review => {
+      return req.params.rid === review._id.toString()
+    }) 
+    
       res.render('albums/editReview', {
         album,
         review,
         title: "Edit Review"
       })
-    })
-  })
-  .catch(error => {
-    console.log(error)
-    res.redirect('/albums')
   })
 }
+
+// function updateReview(req, res) {
+//   Album.findById(req.params.id, (error, album) => {
+    
+//     const review = album.reviews.filter(review => {
+//       return req.params.rid === review._id.toString()
+//     }) 
+//   })
+//     .then(review => {
+//       review.updateOne(req.body, {new: true})
+//       .then(()=> {
+//         res.redirect('/albums')
+//       })
+//     })
+//   }
+
 
 
 
@@ -151,4 +166,5 @@ export {
   createReview,
   deleteReview,
   editReview,
+  //updateReview,
 }

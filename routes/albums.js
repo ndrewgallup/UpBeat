@@ -10,7 +10,7 @@ router.get('/new', isLoggedIn, albumsCtrl.new)
 router.get('/:id', isLoggedIn, albumsCtrl.show)
 router.get('/:id/edit', isLoggedIn, albumsCtrl.edit)
 router.get('/:id/reviews', isLoggedIn, albumsCtrl.newReview)
-router.get('/:id/edit', isLoggedIn, albumsCtrl.editReview)
+router.get('/:id/reviews/:rid', isLoggedIn, albumsCtrl.editReview)
 
 //POST- /albums
 router.post('/', isLoggedIn, albumsCtrl.create)
@@ -18,6 +18,7 @@ router.post('/:id', isLoggedIn, albumsCtrl.createReview)
 
 // PUT - /albums/:id
 router.put('/:id', isLoggedIn, albumsCtrl.update)
+//router.put('/:id/reviews/:rid', isLoggedIn, albumsCtrl.updateReview)
 
 
 // DELETE - localhost:3000/games/:id/reviews/:rid
