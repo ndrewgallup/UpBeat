@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
   align-items: center;
+  justify-content: right;
   background-color: rgb(230, 180, 56);
   height: 100px;
   font-size: 15px;
@@ -8,19 +9,18 @@
 }
 
 .logo {
-  height: 75px;
-  width: 120px;
+  height: 72px;
+  width: 115px;
   border: 1px solid black;
   border-radius: 20%;
   justify-content:left;
+  margin-right: auto;
 }
 
 .nav-links a {
-  color:rgb(7, 78, 31);
-  padding: 7px;
-  
-
-  
+  color:rgb(18, 91, 150);
+  padding: 15px;
+  margin: 10px;
 }
 
 
