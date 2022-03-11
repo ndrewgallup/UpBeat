@@ -23,6 +23,7 @@ Here's a link to some planning:
 - Less text-based
 - Search capability
 - Browser Responsiveness
+- API use
 
 
 ## Technologies Used
