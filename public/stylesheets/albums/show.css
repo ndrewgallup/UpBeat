@@ -1,0 +1,38 @@
+main {
+  display: grid;
+  border-bottom: 10px silver solid;
+  margin: 10px 20px 0px 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-size: 15px;
+  margin: 10px;
+}
+
+#album-details {
+  display: grid;
+  font-size: 15px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-alb-btn {
+  width: 12rem;
+  font-family: 'Rock Salt', cursive;
+  font-size: 12px;
+  margin: 10px;
+  background-color: rgb(90, 132, 209);
+}
+
+.edit-form {
+  margin-left: 200px;
+}
+
+
+
+
+
+

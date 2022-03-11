@@ -1,6 +1,6 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="../stylesheets/style.css" />
-<link rel="stylesheet" href="../stylesheets/albums/details.css" />
+<link rel="stylesheet" href="/stylesheets/style.css" />
+<link rel="stylesheet" href="/stylesheets/albums/show.css" />
 
 <%- include('../partials/nav') %>
 
@@ -8,20 +8,16 @@
 <main>
 <h1>"<%= album.title %>"</h1>
 <section id="album-details">
-    <div>Artist: </div>
-    <div><%= album.artist %></div>
-    <div>Release Year: </div>
-    <div><%= album.year %></div>
-    <div>Record Label: </div>
-    <div><%= album.recordLabel %></div>
-    <div>Favorite Song </div>
-    <div><%= album.favTrack %></div>
+    <div>Artist -----> <%= album.artist %></div>
+    <div>Release Year -----> <%= album.year %></div>
+    <div>Record Label -----> <%= album.recordLabel %></div>
+    <div>Favorite Song -----> <%= album.favTrack %></div>
 </section>
 
-<section id="user-options">
+<section id="edit-option">
     <% if (album.owner.equals(user?.profile._id)) { %>
-    <form action="/albums/<%= album._id %>/edit" method="GET">
-      <button class="btn" type="submit">Edit Album</button>
+    <form class="edit-form" action="/albums/<%= album._id %>/edit" method="GET">
+      <button class="edit-alb-btn" type="submit">Edit Album</button>
     </form>
   <% } %>
 </section>

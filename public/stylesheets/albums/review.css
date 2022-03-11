@@ -1,0 +1,50 @@
+h1 {
+  font-family: 'Rock Salt', cursive;
+  font-size: 48px;
+  padding: 7px;
+  margin: 25px 0px -20px 0px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0;
+}
+p {
+  font-size: 15px;
+  margin: 0;
+}
+
+.rating {
+  font-size: 15px;
+  margin: 0;
+}
+
+#review-form {
+  
+  text-align: center;
+  font-size: 2rem;
+  border: 10px silver solid;
+  background-color: bisque;
+  margin: 0px 10px 40px 10px;
+  padding: 15px;
+  
+}
+
+#content-textarea {
+  margin: 20px;
+  height: 100px;
+  width: 200px;
+}
+
+#rating-select {
+  font-size: 20px;
+}
+
+.review-btn {
+  width: 12rem;
+  font-family: 'Rock Salt', cursive;
+  font-size: 2rem;
+  margin: 10px;
+  background-color: rgb(90, 132, 209);
+  
+}
