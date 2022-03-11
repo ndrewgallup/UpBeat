@@ -22,6 +22,7 @@ Here's a link to some planning:
 - Profile Capability: favorites, comments, etc.
 - Less text-based
 - Search capability
+- Browser Responsiveness
 
 
 ## Technologies Used
