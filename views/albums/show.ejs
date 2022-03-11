@@ -46,7 +46,7 @@
             <td>Rating: <%= review.rating %></td>
             <td>
               <form action="/albums/<%= album._id %>/reviews/<%= review._id %>" method="GET">
-              <button class="btn" type="submit">Read the Review!</button>
+              <button class="read-btn" type="submit">Read the Review!</button>
               </form>
             </td>
           <% if (review.owner.equals(user?.profile._id)) { %>

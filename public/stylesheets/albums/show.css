@@ -69,6 +69,19 @@ td {
   background-color: rgb(90, 132, 209);
 }
 
+.read-btn {
+  width: 15rem;
+  font-family: 'Rock Salt', cursive;
+  font-size: 10px;
+  margin: 10px;
+  background-color: rgb(90, 132, 209);
+}
+
+.delete-review-btn {
+  background-color: rgb(90, 132, 209);
+  font-family: 'Rock Salt', cursive;
+  font-size: 10px;
+}
 
 
 
