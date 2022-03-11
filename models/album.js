@@ -15,8 +15,6 @@ const reviewSchema = new Schema ({
   timestamps: true
 })
   
-
-
 const albumSchema = new Schema({
   title: String,
   artist: String, 
@@ -25,7 +23,6 @@ const albumSchema = new Schema({
   favTrack: {type: String, required: true},
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   reviews: [reviewSchema],
-  
 }, {
   timestamps: true
 })

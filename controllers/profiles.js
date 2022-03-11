@@ -15,7 +15,6 @@ function index(req, res) {
   })
 }
 
-
 function show(req, res) {
   Profile.findById(req.params.id)
   .then((profile) => {

@@ -31,9 +31,8 @@ p {
 }
 
 #content-textarea {
-  margin: 20px;
-  height: 100px;
-  width: 200px;
+  height: 80px;
+  width: 90%;
 }
 
 #rating-select {

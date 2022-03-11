@@ -1,7 +1,6 @@
 main {
   display: grid;
-  border-bottom: 10px silver solid;
-  margin: 10px 20px 0px 20px;
+  margin: 10px 40px 0px 40px;
   justify-content: center;
   align-items: center;
 }
@@ -19,6 +18,14 @@ p {
   justify-content: center;
 }
 
+#edit-option {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 10px solid silver;
+  margin: 10px 60px 0px 60px;
+}
+
 .edit-alb-btn {
   width: 12rem;
   font-family: 'Rock Salt', cursive;
@@ -27,9 +34,37 @@ p {
   background-color: rgb(90, 132, 209);
 }
 
-.edit-form {
-  margin-left: 200px;
+/*below is css for review rendering*/
+
+h3 {
+  font-size: 15px;
 }
+
+td {
+  font-size: 13px;
+  padding: 0px 20px;
+}
+
+#reviews {
+  text-align: center;
+}
+
+.review-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+  
+.add-review-btn {
+  width: 12rem;
+  font-family: 'Rock Salt', cursive;
+  font-size: 12px;
+  margin: 10px;
+  background-color: rgb(90, 132, 209);
+}
+
 
 
 

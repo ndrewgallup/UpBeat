@@ -30,9 +30,8 @@ main {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 60px;
   margin: -15px;
-
 }
 
 p {
@@ -42,19 +41,22 @@ p {
 
 #heading {
   margin: 0;
-  font-size: 12px;
+  font-size: 15px;
   padding-bottom: 10px;
+  border-bottom: 10px solid silver;
+  border-top: 10px solid silver;
+  margin: 10px 50px 0px 50px;
 }
 
 #head-description {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 #main-pic {
   border: 10px solid silver;
   margin: 30px, 0px, 30px, 0px;
-  height: 500px;
-  width: 800px;
+  height: 400px;
+  width: 700px;
 }
 
 .siwg {

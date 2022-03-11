@@ -9,6 +9,12 @@ h1 {
   margin: 30px;
 }
 
+p {
+  font-family: 'Rock Salt', cursive;
+  font-size: 15px;
+  margin: 10px;
+}
+
 .new-form {
   display: grid;
   text-align: center;
