@@ -71,7 +71,7 @@ function update(req, res) {
     if (album.owner.equals(req.user.profile._id)) {
       album.updateOne(req.body, {new: true})
       .then(()=> {
-        res.redirect('/albums')
+        res.redirect(`/albums/${album._id}`)
       })
     } else {
       throw new Error ('🚫 Not authorized 🚫')

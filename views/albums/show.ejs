@@ -1,9 +1,11 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="../stylesheets/style.css" />
+<link rel="stylesheet" href="../stylesheets/albums/details.css" />
+
 <%- include('../partials/nav') %>
 
-<p>From the iPod of <%= album.owner.name %></p>
-
+<p>-UpBeat brought to you by <%= album.owner.name %>-</p>
+<main>
 <h1>"<%= album.title %>"</h1>
 <section id="album-details">
     <div>Artist: </div>
@@ -23,6 +25,7 @@
     </form>
   <% } %>
 </section>
+</main>
 
 <section id="reviews">
   <% if (album.reviews.length) { %>
@@ -69,6 +72,8 @@
 
 
 </section>
+
+
 
 
 
