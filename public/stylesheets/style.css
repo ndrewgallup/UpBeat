@@ -17,14 +17,11 @@ html {
 }
 
 body {
-  background-color: rgb(250, 248, 248);
+  background-color: bisque;
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: 'Rock Salt', cursive;
   margin: 0;
 }
-
-
-
 main {
   display: flex;
   align-items: center;
@@ -59,7 +56,6 @@ p {
   height: 500px;
   width: 800px;
 }
-
 
 .siwg {
   background: url(/images/auth/google/siwg_light_normal.png);

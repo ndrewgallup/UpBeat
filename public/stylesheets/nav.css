@@ -2,10 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: right;
-  background-color: rgb(230, 180, 56);
+  background-color: rgb(243, 203, 153);;
   height: 100px;
   font-size: 15px;
-  border: 10px solid silver;
+  border-top: 10px solid silver;
+  border-bottom: 10px solid silver;
+  margin: 10px 20px 0px 20px;
 }
 
 .logo {

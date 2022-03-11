@@ -1,6 +1,11 @@
 main {
   display: flex;
+  
 
+}
+
+body {
+  background-color: bisque;
 }
 
 h1 {
@@ -15,23 +20,24 @@ h1 {
   text-align: center;
   grid-template-columns: repeat(2, minmax(auto, 35.2rem));
   font-size: 2rem;
-  border: 1px rgb(230, 180, 56) solid;
-  background-color: silver;
-  
-  border-width: 30px;
+  border: 10px silver solid;
+  background-color: bisque;
   margin: 10px
 }
 
 form * {
   padding: 7px;
-  border-radius: 10px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 10px;
+  font-family: 'Rock Salt', cursive;
 }
 
 #album-btn {
   width: 15rem;
   font-family: 'Rock Salt', cursive;
   font-size: 2rem;
+  margin: 30px;
+  background-color: rgb(90, 132, 209);
+  
 }
 
