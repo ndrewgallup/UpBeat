@@ -19,17 +19,11 @@ html {
 body {
   background-color: rgb(250, 248, 248);
   /* Use a system font, if none are available use an available sans-sarif font */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: 'Rock Salt', cursive;
   margin: 0;
 }
 
-nav {
-  background-color: white;
-  font-size: 1.6rem;
-  display: flex;
-  justify-content: center;
-}
+
 
 main {
   display: flex;
@@ -39,5 +33,74 @@ main {
 }
 
 h1 {
-  font-size: 3.6rem;
+  font-size: 50px;
+  margin: -15px;
+
+}
+
+p {
+  margin: 0;
+  text-align: center;
+}
+
+#heading {
+  margin: 0;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+
+#head-description {
+  font-size: 18px;
+}
+
+#main-pic {
+  border: 10px solid silver;
+  margin: 30px, 0px, 30px, 0px;
+  height: 500px;
+  width: 800px;
+}
+
+
+.siwg {
+  background: url(/images/auth/google/siwg_light_normal.png);
+  cursor: pointer;
+  border: none;
+  width: 191px;
+  height: 46px;
+}
+
+.siwg-link {
+  display: inline-block;
+}
+
+.siwg:focus,
+.siwg-link:focus {
+  background: url(/images/auth/google/siwg_light_focus.png);
+  outline: none;
+}
+
+.siwg:active {
+  background: url(/images/auth/google/siwg_light_pressed.png);
+}
+
+/* This pre-loads the siwg focus and active buttons */
+.siwg::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url(/images/auth/google/siwg_light_pressed.png)
+    url(/images/auth/google/siwg_light_focus.png);
+}
+
+/* This hides the siwg alt text and broken image icon */
+#siwg-image {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

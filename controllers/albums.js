@@ -136,19 +136,16 @@ function editReview(req, res) {
 }
 
 // function updateReview(req, res) {
-//   Album.findById(req.params.id, (error, album) => {
-    
-//     const review = album.reviews.filter(review => {
-//       return req.params.rid === review._id.toString()
-//     }) 
-//   })
-//     .then(review => {
-//       review.updateOne(req.body, {new: true})
-//       .then(()=> {
-//         res.redirect('/albums')
+//   Album.findById(req.params.albumId)
+//     .then (album => {
+//     album.reviews.id(req.params.id) = updateReview
+//     album.save()
+//     .then (() => {
+//       res.redirect(`/albums/${req.params._id}`)
 //       })
 //     })
 //   }
+
 
 
 

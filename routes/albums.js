@@ -18,7 +18,7 @@ router.post('/:id', isLoggedIn, albumsCtrl.createReview)
 
 // PUT - /albums/:id
 router.put('/:id', isLoggedIn, albumsCtrl.update)
-//router.put('/:id/reviews/:rid', isLoggedIn, albumsCtrl.updateReview)
+//router.put('/:id/reviews', isLoggedIn, albumsCtrl.updateReview)
 
 
 // DELETE - localhost:3000/games/:id/reviews/:rid

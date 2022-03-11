@@ -1,19 +1,37 @@
-form {
+main {
+  display: flex;
+
+}
+
+h1 {
+  font-family: 'Rock Salt', cursive;
+  font-size: 48px;
+  padding: 7px;
+  margin: 30px;
+}
+
+.new-form {
   display: grid;
-  grid-gap: 10px;
+  text-align: center;
   grid-template-columns: repeat(2, minmax(auto, 35.2rem));
   font-size: 2rem;
+  border: 1px rgb(230, 180, 56) solid;
+  background-color: silver;
+  
+  border-width: 30px;
+  margin: 10px
 }
 
 form * {
-  padding: 5px;
-  border-radius: 5px;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 2rem;
+  margin: 10px;
+}
+
+#album-btn {
+  width: 15rem;
+  font-family: 'Rock Salt', cursive;
   font-size: 2rem;
 }
 
-form > button {
-  grid-column: span 2;
-  width: 16rem;
-  margin-left: auto;
-  font-size: 2.2rem;
-}
