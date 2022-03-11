@@ -10,6 +10,10 @@ p {
   margin: 10px;
 }
 
+h1 {
+  text-align: center;
+}
+
 #album-details {
   display: grid;
   font-size: 15px;

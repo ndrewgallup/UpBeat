@@ -4,30 +4,30 @@
 <%- include('../partials/nav') %>
 
 <main>
-<p>Glad to have you, <%= user ? user.profile.name : "friend" %></h1></p>
-<h1> <%= title %> </h1>
-<% if (user) { %>
-  <form class="new-form" action="/albums" method="POST">
-    <label>Title:<br>
-      <input type="text" name="title" placeholder="Title">
-    </label>
-    <label>Artist:<br>
-      <input type="text" name="artist" placeholder="Artist">
-    </label>
-    <label>Release Year:<br>
-      <input type="'text" name="year" placeholder="Year">
-    </label>
-    <label>Record Label:<br>
-      <input type="text" name="recordLabel" placeholder="Label">
-    </label>
-    <label>Favorite Song:<br>
-      <input type="text" name="favTrack" placeholder="Song">
-    </label>
-    <div><button id="album-btn" type="submit">UpBeat</button></div>
-  </form><br><br>
-  
+  <p>Glad to have you, <%= user ? user.profile.name : "friend" %></h1></p>
+  <h1> <%= title %> </h1>
+  <% if (user) { %>
+    <form class="new-form" action="/albums" method="POST">
+      <label>Title:<br>
+        <input type="text" name="title" placeholder="Title">
+      </label>
+      <label>Artist:<br>
+        <input type="text" name="artist" placeholder="Artist">
+      </label>
+      <label>Release Year:<br>
+        <input type="'text" name="year" placeholder="Year">
+      </label>
+      <label>Record Label:<br>
+        <input type="text" name="recordLabel" placeholder="Label">
+      </label>
+      <label>Favorite Song:<br>
+        <input type="text" name="favTrack" placeholder="Song">
+      </label>
+      <div>
+        <button id="album-btn" type="submit">UpBeat</button>
+      </div>
+    </form><br><br>
   <% } %>
 </main>
-
 
 <%- include('../partials/footer') %>

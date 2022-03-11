@@ -7,36 +7,35 @@
 <p>-UpBeat brought to you by <%= album.owner.name %>-</p>
 <main>
 <h1>"<%= album.title %>"</h1>
-<section id="album-details">
+  <section id="album-details">
     <div>Artist -----> <%= album.artist %></div>
     <div>Release Year -----> <%= album.year %></div>
     <div>Record Label -----> <%= album.recordLabel %></div>
     <div>Favorite Song -----> <%= album.favTrack %></div>
-</section>
+  </section>
 </main>
-
-<section id="edit-option">
+  
+  <section id="edit-option">
     <% if (album.owner.equals(user?.profile._id)) { %>
     <form class="edit-form" action="/albums/<%= album._id %>/edit" method="GET">
       <button class="edit-alb-btn" type="submit">Edit Album</button>
     </form>
-  <% } %>
-</section>
+    <% } %>
+  </section>
 
 
-<section id="reviews">
-  <section id="review-option">
-    <form action="/albums/<%= album._id %>/reviews" method="GET">
-    <button class="add-review-btn" type="submit">
-      Add Review
-    </button>
-    </form>
-</section>
-  <% if (album.reviews.length) { %>
+  <section id="reviews">
+    <section id="review-option">
+      <form action="/albums/<%= album._id %>/reviews" method="GET">
+      <button class="add-review-btn" type="submit">
+        Add Review
+      </button>
+      </form>
+    </section>
+    <% if (album.reviews.length) { %>
     <table class="review-table">
       <thead>
-        <tr>
-          
+        <tr> 
         </tr>
       </thead>
       <tbody>
@@ -45,12 +44,17 @@
             <td><%= review.owner.name %></td>
             <td><%= review.createdAt.toLocaleDateString() %></td>
             <td>Rating: <%= review.rating %></td>
-            <td><form action="/albums/<%= album._id %>/reviews/<%= review._id %>" method="GET">
-              <button class="btn" type="submit">Read the Review!</button></form></td>
-            <% if (review.owner.equals(user?.profile._id)) { %>
-            <td><form action="/albums/<%= album._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button class="delete-review-btn" type="sumbit">X</button>
-            </form></td>
+            <td>
+              <form action="/albums/<%= album._id %>/reviews/<%= review._id %>" method="GET">
+              <button class="btn" type="submit">Read the Review!</button>
+              </form>
+            </td>
+          <% if (review.owner.equals(user?.profile._id)) { %>
+            <td>
+              <form action="/albums/<%= album._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                <button class="delete-review-btn" type="sumbit">X</button>
+              </form>
+            </td>
           </tr>
           <% } %>
         <% }) %>
@@ -60,14 +64,6 @@
     <h3>Be the first to leave a review!</h3>
   <% } %>
 
-
-
-
 </section>
-
-
-
-
-
 
 <%- include('../partials/footer') %>

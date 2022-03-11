@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="/stylesheets/albums/review.css">
 <%- include('../partials/nav') %>
 
-
 <main>
 	<h1>Add Review</h1>
   <p>for</p>
@@ -14,22 +13,22 @@
       method="POST"
     >
     <label for="content-textarea"></label>
-    <textarea name="content" id="content-textarea" placeholder="Review goes here!"></textarea><br><br>
+      <textarea name="content" id="content-textarea" placeholder="Review goes here!"></textarea><br><br>
     <label for="rating-select" class="rating">Rating:</label>
-    <select name="rating" id="rating-select">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10" selected>10</option>
-    </select><br><br><br>
+      <select name="rating" id="rating-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10" selected>10</option>
+      </select><br><br><br>
       <button class="review-btn" type="submit">UpBeat</button>
     </form>
+</main>
 
-  
 <%- include('../partials/footer') %>

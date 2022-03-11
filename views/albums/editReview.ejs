@@ -3,15 +3,14 @@
 <link rel="stylesheet" href="/stylesheets//albums/editRev.css">
 <%- include('../partials/nav') %>
 
-
 <main>
   <% album.reviews.forEach(function(review) { %>
 	<h1>Review</h1>
   <p>For</p>
-  <h2>"<%= album.title %>" </h2>
+  <h2> "<%= album.title %>" </h2>
   <p class="box"><%= review.content %></p><br><br>
-    <% }) %>
+  <% }) %>
+  <button class="btn" type="submit">Edit</button>
+</main> 
 
-    <button class="btn" type="submit">Edit</button>
-  
 <%- include('../partials/footer') %>
